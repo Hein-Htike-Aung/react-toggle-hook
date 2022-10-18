@@ -1,7 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import useCoduToggle from "use-coduhha-toggle";
 
 function App() {
+  const [isOn, setIsOn] = useCoduToggle(true);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +20,7 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={() => setIsOn(!isOn)}>Is active {`${isOn}`}</button>
       </header>
     </div>
   );
